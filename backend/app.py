@@ -22,6 +22,7 @@ def get_time_steps(x: str, y: str, z: str, sigma: str, rho: str, beta: str, delt
         return create_response_object("Could not complete request at this time. Please make sure your request is valid or try again later.", "get", 500, "Could not complete request at this time")
 
 def get_time_steps_list(x: int, y: int, z: int, sigma: int, rho: int, beta: int, delta: int):
+    '''Get list of time steps from the given input'''
     result_list = [{
         "n": 0,
         "x": x,
