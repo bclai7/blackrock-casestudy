@@ -3,13 +3,14 @@ import Input from './Input';
 import Result from './Result';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [results, setResults] = useState([{n: "", x: "", y: "", z: ""}]);
   const [validInput, setValidInput] = useState(true);
 
-  const getTimeSteps = (x, y, z, sigma, rho, beta, delta) => {
+  const getTimeSteps = (event, x, y, z, sigma, rho, beta, delta) => {
+    event.preventDefault();
     if(isNaN(x) || isNaN(y) || isNaN(z) || isNaN(sigma) || isNaN(rho) || isNaN(beta) || isNaN(delta)) {
       setValidInput(false);
     }
@@ -19,7 +20,6 @@ function App() {
         return res.json();
       })
       .then(data => {
-        console.log(data["data"]);
         setResults(data["data"]);
       });
     }
@@ -28,7 +28,7 @@ function App() {
   return (
     <Container fluid>
       <div className="App">
-        <Form className='inputForm'>
+        <Form className='inputForm' onSubmit={(e) => getTimeSteps(e,1,2,1,2,1,2,1)}>
           <TopBar getTimeSteps={getTimeSteps} />
           <div className='bottomSection'>
             <Input />

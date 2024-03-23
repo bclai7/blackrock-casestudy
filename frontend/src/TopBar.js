@@ -11,7 +11,7 @@ function TopBar({getTimeSteps}) {
                 AI Labs | <b>Full Stack Case Study</b>
             </Col>
             <Col xs={{ span: 1, offset: 7 }}>
-                <Button className='runButton' type="button" variant="primary" onClick={() => getTimeSteps(1,2,1,2,1,2,1)}>
+                <Button className='runButton' type="submit" variant="primary">
                     Run
                 </Button>
             </Col>
