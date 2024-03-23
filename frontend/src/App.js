@@ -29,7 +29,7 @@ function App() {
     <Container fluid>
       <div className="App">
         <Form className='inputForm' onSubmit={(e) => getTimeSteps(e,1,2,1,2,1,2,1)}>
-          <TopBar getTimeSteps={getTimeSteps} />
+          <TopBar />
           <div className='bottomSection'>
             <Input />
             <Result results = { results } validInput = {validInput}/>

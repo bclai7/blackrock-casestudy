@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function TopBar({getTimeSteps}) {
+function TopBar() {
 
   return (
     <div className="TopBar sectionHeader">
