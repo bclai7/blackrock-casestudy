@@ -9,13 +9,13 @@ function App() {
   const [results, setResults] = useState([{n: "", x: "", y: "", z: ""}]);
   const [validInput, setValidInput] = useState(true);
   const [formData, setFormData] = useState({
-    x: null,
-    y: null,
-    z: null,
-    sigma: null,
-    rho: null,
-    beta: null,
-    delta: null,
+    x: '',
+    y: '',
+    z: '',
+    sigma: '',
+    rho: '',
+    beta: '',
+    delta: '',
   });
   
   const handleChange = (e) => {
