@@ -2,7 +2,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 
-function Result() {
+function Result(props) {
+  const results = props.results;
   return (
     <div className="Result">
         <div className='resultHeader sectionHeader'>
@@ -19,19 +20,21 @@ function Result() {
                 <Table bordered hover>
                     <thead className='tableHeader'>
                         <tr>
-                        <th>N</th>
-                        <th>X</th>
-                        <th>Y</th>
-                        <th>Z</th>
+                            <th>N</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>Z</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {results?.map((result) => (
+                            <tr key={result.n}>
+                                <td>{result.n}</td>
+                                <td>{result.x}</td>
+                                <td>{result.y}</td>
+                                <td>{result.z}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </Table>
                 </Col>
