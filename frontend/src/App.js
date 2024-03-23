@@ -8,14 +8,27 @@ import { useState } from "react";
 function App() {
   const [results, setResults] = useState([{n: "", x: "", y: "", z: ""}]);
   const [validInput, setValidInput] = useState(true);
-
-  const getTimeSteps = (event, x, y, z, sigma, rho, beta, delta) => {
+  const [formData, setFormData] = useState({
+    x: null,
+    y: null,
+    z: null,
+    sigma: null,
+    rho: null,
+    beta: null,
+    delta: null,
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const getTimeSteps = (event) => {
     event.preventDefault();
-    if(isNaN(x) || isNaN(y) || isNaN(z) || isNaN(sigma) || isNaN(rho) || isNaN(beta) || isNaN(delta)) {
+    if(isNaN(formData.x) || isNaN(formData.y) || isNaN(formData.z) || isNaN(formData.sigma) || isNaN(formData.rho) || isNaN(formData.beta) || isNaN(formData.delta)) {
       setValidInput(false);
     }
     else {
-      const url = `http://127.0.0.1:5000/api/v1/discretetime/${x}/${y}/${z}/${sigma}/${rho}/${beta}/${delta}`;
+      const url = `http://127.0.0.1:5000/api/v1/discretetime/${formData.x}/${formData.y}/${formData.z}/${formData.sigma}/${formData.rho}/${formData.beta}/${formData.delta}`;
       fetch(url).then(res => {
         return res.json();
       })
@@ -28,10 +41,10 @@ function App() {
   return (
     <Container fluid>
       <div className="App">
-        <Form className='inputForm' onSubmit={(e) => getTimeSteps(e,1,2,1,2,1,2,1)}>
+        <Form className='inputForm' onSubmit={(e) => getTimeSteps(e)}>
           <TopBar />
           <div className='bottomSection'>
-            <Input />
+            <Input handleChange={handleChange} formData={formData}/>
             <Result results = { results } validInput = {validInput}/>
           </div>
         </Form>
