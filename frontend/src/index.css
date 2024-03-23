@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div.sectionHeader {
+  border-style: solid;
+  padding: 5px 10px 5px 10px;
+  background-color: #cccccc;
+}
+div.inputHeader {
+  border-width: 2px 2px 1px 2px;
+  background-color: #cccccc;
+}
+
+div.topBar {
+  border-width: 2px 2px 1px 2px;
+  background-color: #cccccc;
+}
+
+div.inputFields {
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px 10px 5px 10px;
+  border-width: 1px 2px 2px 2px;
+}
+
+div.bottomSection {
+  padding: 25px;
+}
+
+div.Input {
+  margin-bottom: 20px;
+}
+
+button.runButton {
+  float: right;
+}
