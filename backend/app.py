@@ -1,10 +1,14 @@
 from flask import Flask, jsonify, make_response
 import sys
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 sys.set_int_max_str_digits(0)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/api/v1/discretetime/<x>/<y>/<z>/<sigma>/<rho>/<beta>/<delta>', methods=['GET'])
+@cross_origin()
 def get_time_steps(x: str, y: str, z: str, sigma: str, rho: str, beta: str, delta: str):
     try:
         x = int(x)
