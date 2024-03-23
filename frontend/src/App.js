@@ -6,21 +6,34 @@ import Form from 'react-bootstrap/Form';
 import { useState, useEffect } from "react";
 
 function App() {
-  const [results, setResults] = useState([{n: 1, x: 2, y: 3, z: 4}]);
+  const [results, setResults] = useState([{n: "", x: "", y: "", z: ""}]);
+  const [validInput, setValidInput] = useState(true);
 
-  useEffect(() => {
-    console.log('use effect ran');
-  });
+  const getTimeSteps = (x, y, z, sigma, rho, beta, delta) => {
+    if(isNaN(x) || isNaN(y) || isNaN(z) || isNaN(sigma) || isNaN(rho) || isNaN(beta) || isNaN(delta)) {
+      setValidInput(false);
+    }
+    else {
+      const url = `http://127.0.0.1:5000/api/v1/discretetime/${x}/${y}/${z}/${sigma}/${rho}/${beta}/${delta}`;
+      fetch(url).then(res => {
+        return res.json();
+      })
+      .then(data => {
+        console.log(data["data"]);
+        setResults(data["data"]);
+      });
+    }
+  };
+  
   return (
     <Container fluid>
       <div className="App">
         <Form className='inputForm'>
-          <TopBar />
+          <TopBar getTimeSteps={getTimeSteps} />
           <div className='bottomSection'>
             <Input />
-            <Result results = { results }/>
+            <Result results = { results } validInput = {validInput}/>
           </div>
-          
         </Form>
         
       </div>
