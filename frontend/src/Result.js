@@ -5,6 +5,16 @@ import Table from 'react-bootstrap/Table';
 function Result(props) {
   const results = props.results;
   const validInput = props.validInput;
+  const errorOccurred = props.errorOccurred;
+  if(errorOccurred) {
+    return (
+        <Row>
+            <Col>
+                <div className='errorOccured'>An error has occurred</div>
+            </Col>
+        </Row>
+    );
+  }
   if(validInput) {
     return (
         <div className="Result">

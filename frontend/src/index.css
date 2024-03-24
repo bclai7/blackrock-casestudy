@@ -66,3 +66,9 @@ div.invalidInput {
   border-width: 2px 2px 2px 2px;
   padding: 10px;
 }
+
+div.errorOccurred {
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  padding: 10px;
+}
