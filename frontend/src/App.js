@@ -53,7 +53,7 @@ function App() {
   
   return (
     <Container fluid>
-      <div className="App">
+      <div className="App" data-testid="app">
         <Form className='inputForm' onSubmit={(e) => getTimeSteps(e)}>
           <TopBar />
           <div className='bottomSection'>

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`topBar snapshot 1`] = `
+<div
+  className="TopBar sectionHeader"
+  data-testid="topBar"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-4"
+    >
+      AI Labs | 
+      <b>
+        Full Stack Case Study
+      </b>
+    </div>
+    <div
+      className="col-1 offset-7"
+    >
+      <button
+        className="runButton btn btn-primary"
+        data-testid="runButton"
+        disabled={false}
+        type="submit"
+      >
+        Run
+      </button>
+    </div>
+  </div>
+</div>
+`;

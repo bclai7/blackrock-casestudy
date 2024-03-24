@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error occureed result snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col"
+  >
+    <div
+      className="errorOccured"
+      data-testid="errorOccurred"
+    >
+      An error has occurred
+    </div>
+  </div>
+</div>
+`;
+
+exports[`invalid input result snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col"
+  >
+    <div
+      className="invalidInput"
+      data-testid="invalidInput"
+    >
+      Invalid Input
+    </div>
+  </div>
+</div>
+`;
+
+exports[`successful result snapshot 1`] = `
+<div
+  className="Result"
+  data-testid="resultHeader"
+>
+  <div
+    className="resultHeader sectionHeader"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        Results
+      </div>
+    </div>
+  </div>
+  <div
+    className="resultSection"
+    data-testid="resultSection"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <table
+          className="table table-bordered table-hover"
+          data-testid="resultTable"
+        >
+          <thead
+            className="tableHeader"
+          >
+            <tr>
+              <th>
+                N
+              </th>
+              <th>
+                X
+              </th>
+              <th>
+                Y
+              </th>
+              <th>
+                Z
+              </th>
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;

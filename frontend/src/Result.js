@@ -10,14 +10,14 @@ function Result(props) {
     return (
         <Row>
             <Col>
-                <div className='errorOccured'>An error has occurred</div>
+                <div className='errorOccured' data-testid="errorOccurred">An error has occurred</div>
             </Col>
         </Row>
     );
   }
   if(validInput) {
     return (
-        <div className="Result">
+        <div className="Result" data-testid="resultHeader">
             <div className='resultHeader sectionHeader'>
                 <Row>
                     <Col>
@@ -26,10 +26,10 @@ function Result(props) {
                 </Row>
           </div>
     
-          <div className='resultSection'>
+          <div className='resultSection' data-testid="resultSection">
                 <Row>
                     <Col>
-                    <Table bordered hover>
+                    <Table bordered hover data-testid="resultTable">
                         <thead className='tableHeader'>
                             <tr>
                                 <th>N</th>
@@ -59,7 +59,7 @@ function Result(props) {
     return (
         <Row>
             <Col>
-                <div className='invalidInput'>Invalid Input</div>
+                <div className='invalidInput' data-testid="invalidInput">Invalid Input</div>
             </Col>
         </Row>
     );
