@@ -11,13 +11,13 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @cross_origin()
 def get_time_steps(x: str, y: str, z: str, sigma: str, rho: str, beta: str, delta: str):
     try:
-        x = int(x)
-        y = int(y)
-        z = int(z)
-        sigma = int(sigma)
-        rho = int(rho)
-        beta = int(beta)
-        delta = int(delta)
+        x = float(x)
+        y = float(y)
+        z = float(z)
+        sigma = float(sigma)
+        rho = float(rho)
+        beta = float(beta)
+        delta = float(delta)
 
         return {'data': get_time_steps_list(x, y, z, sigma, rho, beta, delta)}
     except ValueError:
@@ -25,7 +25,7 @@ def get_time_steps(x: str, y: str, z: str, sigma: str, rho: str, beta: str, delt
     except Exception:
         return create_response_object("Could not complete request at this time. Please make sure your request is valid or try again later.", "get", 500, "Could not complete request at this time")
 
-def get_time_steps_list(x: int, y: int, z: int, sigma: int, rho: int, beta: int, delta: int):
+def get_time_steps_list(x: float, y: float, z: float, sigma: float, rho: float, beta: float, delta: float):
     '''Get list of time steps from the given input'''
     result_list = [{
         "n": 0,
