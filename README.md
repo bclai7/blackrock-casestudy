@@ -6,6 +6,7 @@ The backend server was build using Flask framework and the frontend was built us
 
 ## How to Run
 First clone this repo to your local machine, then start the backend and front end servers
+*The zip file is 'br-case-study.zip'*
 ### Start Backend Server
 1. Open the 'backend' folder of the project in a terminal
 2. Create a Python Virtual Environment (venv)
